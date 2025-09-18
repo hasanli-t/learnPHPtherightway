@@ -1,0 +1,16 @@
+services:
+  homework-php-web:
+    build: .
+    container_name: homework-php-server
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    networks:
+      - php-network
+
+networks:
+  php-network:
+    driver: bridge
