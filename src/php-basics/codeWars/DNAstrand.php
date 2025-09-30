@@ -19,7 +19,12 @@ function DNA_strand(string $s): string {
     return implode('', $complement);
 }
 
-echo (DNA_strand('ACTG'));
+$dnas = ['AAAA', 'TTTT', 'CGAT', 'TAGC'];
+foreach ($dnas as $dna) {
+    echo $dna . ' --> ' . DNA_strand($dna);
+    echo '<br />';
+}
+
 
 // simplest way: 
 // return strtr($s, 'ATGC', 'TACG');
